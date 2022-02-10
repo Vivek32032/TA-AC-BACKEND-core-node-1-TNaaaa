@@ -11,9 +11,3 @@ console.log(parsedUrl.host)
 console.log(parsedUrl.protocol)
 
 
-var googleUrl = require("url");
-const googleUraData = url.parse(
-  "https://www.google.com/",
-  true
-);
-console.log(googleUraData);
