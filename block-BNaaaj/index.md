@@ -1,6 +1,7 @@
 writeCode
 
 Q. Write code to run `index.js` with content console.log('Welcome to Nodejs') in node environment ?
+Ans : node index.js
 
 Q. In above `index.js` file
 - require os module
