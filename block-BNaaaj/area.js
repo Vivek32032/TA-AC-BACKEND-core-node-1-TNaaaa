@@ -1,13 +1,16 @@
-let area = {
-    square: function(l){
+    function square(l){
       return l*l;
-    },
-    rectangle(l,b){
+    }
+    function rectangle(l,b){
         return l*b;
-    },
-    circle(radius){
+    }
+    function circle(radius){
         return Math.PI*radius*radius;
     }
-}
 
-module.exports = "area";
+
+module.exports = {
+    square : square,
+    rectangle : rectangle,
+    circle : circle
+}
