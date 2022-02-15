@@ -2,8 +2,6 @@
 var http = require('http');
 var server = http.createServer(handleRequest);
 function handleRequest(req,res){
-    var parsedUrl = url.parse(req.url);
-    var pathname = parsedUrl.pathname;
     if(req.method === 'GET' && req.url === '/'){
         res.write('Welcome to homepage');
         res.end();
@@ -11,7 +9,7 @@ function handleRequest(req,res){
         res.setHeader('Content-Type', 'text/html');
         res.end('<h2> About page </h2>');
     }
-    else if(req.method === 'POST' && pathname === '/about'){
+    else if(req.method === 'POST' && req.url === '/about'){
         res.end('Posted for the first time');
     }
     else {
