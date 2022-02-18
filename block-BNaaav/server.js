@@ -1,5 +1,6 @@
 const http = require("http");
-const fs = require("fs");
+var fs = require("fs");
+var url = require("url");
 
 const server = http.createServer(handleRequest);
 
@@ -7,8 +8,8 @@ function handleRequest(req, res) {
   if (req.url === "/") {
     res.setHeader("Content-Type", "text/html");
     fs.createReadStream("./index.html").pipe(res);
-  } else if (req.url === "/about") {
-    fs.createReadStream("./about.html").pipe(res);
+  } else if (req.url.split(".").pop() === "html") {
+    fs.createReadStream(`./${req.url}`).pipe(res);
   } else if (req.url.split(".").pop() === "css") {
     res.setHeader("Content-Type", "text/css");
     fs.createReadStream(`./${req.url}`).pipe(res);
